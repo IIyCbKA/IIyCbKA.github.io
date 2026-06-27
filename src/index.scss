@@ -2,6 +2,13 @@
 *::before,
 *::after {
   box-sizing: border-box;
+
+  @media (prefers-reduced-motion: reduce) {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }
 
 html {
@@ -10,6 +17,7 @@ html {
 }
 
 body {
+  margin: 0;
   font-family: 'Inter', system-ui, sans-serif;
   background: var(--forest-dark);
   color: var(--off-white);

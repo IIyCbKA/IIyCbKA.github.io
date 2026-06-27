@@ -1,0 +1,1 @@
+export const HEADER_SCROLL_THRESHOLD = 40;

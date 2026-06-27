@@ -1,0 +1,8 @@
+<svg viewBox="0 0 100 100" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+<g stroke="currentColor" stroke-width="0.3" fill="none" opacity="0.4">
+<path d="M2 8 L2 2 L8 2" />
+<path d="M98 8 L98 2 L92 2" />
+<path d="M2 92 L2 98 L8 98" />
+<path d="M98 92 L98 98 L92 98" />
+</g>
+</svg>

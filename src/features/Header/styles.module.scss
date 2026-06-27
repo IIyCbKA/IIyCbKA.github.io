@@ -12,7 +12,7 @@
     border-color 400ms var(--ease-quiet);
   border-bottom: 1px solid transparent;
 
-  @media (max-width: 1080px) {
+  @media (max-width: 1024px) {
     padding: 1rem 1.25rem;
   }
 
@@ -23,7 +23,7 @@
     padding: 0.85rem 2rem;
     border-bottom-color: var(--border);
 
-    @media (max-width: 1080px) {
+    @media (max-width: 1024px) {
       padding: 0.75rem 1.25rem;
     }
   }
@@ -96,7 +96,7 @@
     }
   }
 
-  @media (max-width: 1080px) {
+  @media (max-width: 1024px) {
     position: fixed;
     top: 0;
     right: 0;
@@ -211,7 +211,7 @@
     }
   }
 
-  @media (max-width: 1080px) {
+  @media (max-width: 1024px) {
     display: block;
     z-index: 95;
   }

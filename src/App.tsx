@@ -3,8 +3,7 @@ import "./index.scss";
 import { usePreferencesStore } from "@/stores";
 import ListenerScrollY from "@/hooks/SecrollListener";
 import { ProgressBar } from "@/components";
-import Header from "@/features/Header";
-import Footer from "@/features/Footer";
+import { Header, Hero, Footer } from "@/features";
 
 export default function App(): React.ReactElement {
   const language = usePreferencesStore((s) => s.language);
@@ -24,6 +23,9 @@ export default function App(): React.ReactElement {
       <ListenerScrollY />
       <ProgressBar />
       <Header />
+      <main>
+        <Hero />
+      </main>
       <Footer />
     </>
   );

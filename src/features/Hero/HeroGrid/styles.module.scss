@@ -1,0 +1,75 @@
+.heroGrid {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  isolation: isolate;
+  transform-style: preserve-3d;
+
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 3;
+    pointer-events: none;
+    background:
+      linear-gradient(180deg, transparent 58%, rgba(13, 19, 16, 0.18) 100%),
+      radial-gradient(circle at 50% 48%, transparent 0%, transparent 64%, rgba(13, 19, 16, 0.16) 100%);
+  }
+}
+
+.tile {
+  position: absolute;
+  z-index: 1;
+  overflow: hidden;
+  background:
+    linear-gradient(135deg, rgba(245, 241, 232, 0.045), rgba(245, 241, 232, 0)),
+    var(--forest-mid);
+
+  transform-origin: center;
+  backface-visibility: hidden;
+  will-change: transform, opacity;
+
+  box-shadow: inset 0 0 0 1px rgba(245, 241, 232, 0.035);
+
+  animation: heroTileIn 900ms var(--ease-precise) both;
+}
+
+.tileAccent {
+  background:
+    linear-gradient(135deg, rgba(245, 241, 232, 0.11), rgba(245, 241, 232, 0.02)),
+    var(--forest-light);
+}
+
+.tileImg {
+  position: absolute;
+  max-width: none;
+  object-fit: cover;
+  object-position: center center;
+  pointer-events: none;
+  user-select: none;
+
+  transform: translateY(-2%) translateX(-0.5%) scale(0.92);
+  transform-origin: center center;
+
+  @media (max-width: 1024px) {
+    transform: translateY(-2%) translateX(-3%) scale(0.92);
+  }
+}
+
+@keyframes heroTileIn {
+  from {
+    opacity: 0;
+    transform: rotateX(72deg) translateY(-42px);
+  }
+
+  to {
+    opacity: 1;
+    transform: rotateX(0deg) translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tile {
+    animation: none;
+  }
+}

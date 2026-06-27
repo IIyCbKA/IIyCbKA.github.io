@@ -1,6 +1,7 @@
 import React from "react";
 import styles from "./styles.module.scss";
 import { getHeaderI18n } from "./i18n";
+import { HEADER_SCROLL_THRESHOLD } from "./constants";
 import Moon from "@/assets/Moon-24x24.svg?react";
 import Sun from "@/assets/Sun-24x24.svg?react";
 import { usePreferencesStore, useUiStore } from "@/stores";
@@ -29,7 +30,9 @@ export default function Header(): React.ReactElement {
 
   return (
     <header
-      className={clsx(styles.siteHeader, { [styles.isScrolled]: scrollY > 40 })}
+      className={clsx(styles.siteHeader, {
+        [styles.isScrolled]: scrollY > HEADER_SCROLL_THRESHOLD,
+      })}
       id="siteHeader"
     >
       <div className={styles.headerInner}>
