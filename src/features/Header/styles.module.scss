@@ -1,3 +1,5 @@
+@use '@/shared/breakpoints' as bp;
+
 .siteHeader {
   position: fixed;
   top: 0;
@@ -12,7 +14,7 @@
     border-color 400ms var(--ease-quiet);
   border-bottom: 1px solid transparent;
 
-  @media (max-width: 1024px) {
+  @media (max-width: bp.$md) {
     padding: 1rem 1.25rem;
   }
 
@@ -23,7 +25,7 @@
     padding: 0.85rem 2rem;
     border-bottom-color: var(--border);
 
-    @media (max-width: 1024px) {
+    @media (max-width: bp.$md) {
       padding: 0.75rem 1.25rem;
     }
   }
@@ -96,7 +98,7 @@
     }
   }
 
-  @media (max-width: 1024px) {
+  @media (max-width: bp.$md) {
     position: fixed;
     top: 0;
     right: 0;
@@ -211,7 +213,7 @@
     }
   }
 
-  @media (max-width: 1024px) {
+  @media (max-width: bp.$md) {
     display: block;
     z-index: 95;
   }

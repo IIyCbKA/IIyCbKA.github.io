@@ -1,3 +1,5 @@
+@use '@/shared/breakpoints' as bp;
+
 .hero {
   min-height: 100vh;
   padding: 8rem 2rem 4rem;
@@ -6,7 +8,7 @@
   position: relative;
   background: linear-gradient(180deg, var(--forest-dark) 0%, var(--forest-mid) 100%);
 
-  @media (max-width: 768px) {
+  @media (max-width: bp.$sm) {
     padding: 6rem 1.25rem 3rem;
   }
 }
@@ -21,13 +23,18 @@
   gap: 4rem;
   align-items: center;
 
-  @media (max-width: 1024px) {
+  @media (max-width: bp.$md) {
+    grid-template-columns: minmax(0, 1.2fr) minmax(300px, 0.80fr);
+  }
+
+  @media (max-width: bp.$sm) {
     grid-template-columns: 1fr;
     gap: 2.5rem;
   }
 }
 
-.heroText {}
+.heroText {
+}
 
 .heroLabel {
   font-family: 'IBM Plex Mono', monospace;
@@ -46,8 +53,8 @@
   min-height: 1.2em;
   margin-bottom: 1.5rem;
 
-  @media (max-width: 480px) {
-    font-size: clamp(1.75rem, 9vw, 2.5rem);
+  @media (max-width: bp.$xs) {
+    font-size: clamp(1.4rem, 7vw, 2.5rem);
   }
 }
 
@@ -80,7 +87,7 @@
   margin-bottom: 2.5rem;
   line-height: 1.6;
 
-  @media (max-width: 768px) {
+  @media (max-width: bp.$sm) {
     font-size: 1rem;
   }
 }
@@ -98,15 +105,14 @@
   letter-spacing: 0.14em;
   text-transform: uppercase;
   border: 1px solid;
-  transition:
-    background 300ms var(--ease-quiet),
-    color 300ms var(--ease-quiet),
-    border-color 300ms var(--ease-quiet);
+  transition: background 300ms var(--ease-quiet),
+  color 300ms var(--ease-quiet),
+  border-color 300ms var(--ease-quiet);
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
 
-  @media (max-width: 768px) {
+  @media (max-width: bp.$sm) {
     flex: 1;
     justify-content: center;
     padding: 0.85rem 1rem;
@@ -147,13 +153,13 @@
   justify-self: end;
   perspective: 1200px;
 
-  @media (max-width: 1024px) {
+  @media (max-width: bp.$md) {
     justify-self: center;
     max-width: 480px;
     aspect-ratio: 1 / 1;
   }
 
-  @media (max-width: 480px) {
+  @media (max-width: bp.$xs) {
     max-width: 360px;
   }
 }

@@ -1,3 +1,5 @@
+@use '@/shared/breakpoints' as bp;
+
 .heroGrid {
   position: absolute;
   inset: 0;
@@ -48,10 +50,10 @@
   pointer-events: none;
   user-select: none;
 
-  transform: translateY(-2%) translateX(-0.5%) scale(0.92);
+  transform: translateY(-2%) translateX(-0.4%) scale(0.92);
   transform-origin: center center;
 
-  @media (max-width: 1024px) {
+  @media (max-width: bp.$md) {
     transform: translateY(-2%) translateX(-3%) scale(0.92);
   }
 }
