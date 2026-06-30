@@ -1,0 +1,52 @@
+@use '@/shared/breakpoints' as bp;
+
+.section {
+  padding: 8rem 2rem;
+  max-width: var(--max-w);
+  margin: 0 auto;
+  border-top: 1px solid var(--border);
+
+  @media (max-width: bp.$sm) {
+    padding: 5rem 1.25rem;
+  }
+}
+
+.sectionHead {
+  margin-bottom: 3rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 1rem;
+
+  @media (max-width: bp.$sm) {
+    margin-bottom: 3rem;
+  }
+}
+
+.sectionLabel {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.7rem;
+  letter-spacing: 0.22em;
+  color: var(--text-dim);
+  text-transform: uppercase;
+}
+
+.sectionHeadline {
+  font-family: 'Manrope', sans-serif;
+  font-weight: 800;
+  font-size: clamp(1.75rem, 3.5vw, 3rem);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  max-width: 36rem;
+}
+
+.frame {
+  padding: 10px;
+  border: 1px solid var(--border);
+  transition: border-color 400ms var(--ease-quiet);
+
+  &:hover {
+    border-color: var(--off-white);
+  }
+}
