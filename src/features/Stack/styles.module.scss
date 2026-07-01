@@ -1,0 +1,147 @@
+@use "@/shared/breakpoints" as bp;
+
+.stackGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+  margin-bottom: 4rem;
+
+  @media (max-width: bp.$md) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (max-width: bp.$sm) {
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+  }
+
+  @media (max-width: bp.$xs) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.stackCol {
+  h3 {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.72rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--text-dim);
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--border);
+  }
+}
+
+.stackList {
+  li {
+    padding: 0.6rem 0;
+    border-bottom: 1px dashed var(--border);
+    font-family: 'Manrope', sans-serif;
+    font-weight: 500;
+    font-size: 1rem;
+    transition: color 300ms var(--ease-quiet), padding 300ms var(--ease-quiet);
+    cursor: default;
+
+    &:hover {
+      color: var(--text-faint);
+      padding-left: 0.5rem;
+    }
+  }
+}
+
+.codeBlock {
+  background: var(--forest-mid);
+  border: 1px solid var(--border);
+  overflow: hidden;
+
+  pre {
+    padding: 1.5rem;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.84rem;
+    line-height: 1.75;
+    overflow-x: auto;
+
+    @media (max-width: bp.$sm) {
+      padding: 1rem;
+      font-size: 0.74rem;
+    }
+  }
+
+  code {
+    color: var(--off-white);
+  }
+}
+
+.codeHead {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid var(--border);
+  background: var(--forest-dark);
+}
+
+.codeLang {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.68rem;
+  letter-spacing: 0.12em;
+  color: var(--text-dim);
+  text-transform: uppercase;
+}
+
+.copyBtn {
+  display: inline-grid;
+  place-items: center;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.68rem;
+  letter-spacing: 0.12em;
+  padding: 0.4rem 0.85rem;
+  border: 1px solid var(--border);
+  transition:
+    background 300ms var(--ease-quiet),
+    color 300ms var(--ease-quiet),
+    border-color 300ms var(--ease-quiet);
+  color: var(--text-dim);
+
+  &:hover {
+    border-color: var(--border-strong);
+    color: var(--off-white);
+  }
+
+  span {
+    grid-area: 1 / 1;
+    white-space: nowrap;
+    pointer-events: none;
+
+    transition:
+      opacity 200ms var(--ease-quiet),
+      transform 200ms var(--ease-quiet);
+  }
+
+  .copyLabel {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .copiedLabel {
+    opacity: 0;
+    transform: translateY(0.25rem);
+  }
+
+  &.flashed {
+    background: var(--off-white);
+    color: var(--forest-dark);
+    border-color: var(--off-white);
+
+    .copyLabel {
+      opacity: 0;
+      transform: translateY(-0.25rem);
+    }
+
+    .copiedLabel {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}

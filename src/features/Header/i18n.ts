@@ -15,7 +15,10 @@ export const headerI18n: Record<Language, any> = {
       themeToggle: "Сменить тему",
       menu: "Меню",
     },
-    logoText: "alex.dev",
+    language: {
+      ru: "RU",
+      en: "EN",
+    },
   },
   en: {
     nav: {
@@ -31,7 +34,10 @@ export const headerI18n: Record<Language, any> = {
       themeToggle: "Switch theme",
       menu: "Menu",
     },
-    logoText: "alex.dev",
+    language: {
+      ru: "RU",
+      en: "EN",
+    },
   },
 } as const;
 

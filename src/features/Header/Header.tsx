@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./styles.module.scss";
 import { getHeaderI18n } from "./i18n";
-import { HEADER_SCROLL_THRESHOLD } from "./constants";
+import { HEADER_SCROLL_THRESHOLD, LOGO_MARK, LOGO_TITLE } from "./constants";
 import Moon from "@/assets/Moon-24x24.svg?react";
 import Sun from "@/assets/Sun-24x24.svg?react";
 import { usePreferencesStore, useUiStore } from "@/stores";
@@ -33,17 +33,13 @@ export default function Header(): React.ReactElement {
       className={clsx(styles.siteHeader, {
         [styles.isScrolled]: scrollY > HEADER_SCROLL_THRESHOLD,
       })}
-      id="siteHeader"
     >
       <div className={styles.headerInner}>
         <a href="#hero" className={styles.logo}>
-          <span className={styles.logoMark}>A</span>
-          <span className={styles.logoText}>alex.dev</span>
+          <span className={styles.logoMark}>{LOGO_MARK}</span>
+          <span className={styles.logoText}>{LOGO_TITLE}</span>
         </a>
-        <nav
-          className={clsx(styles.nav, { [styles.isOpen]: isOpenNav })}
-          id="nav"
-        >
+        <nav className={clsx(styles.nav, { [styles.isOpen]: isOpenNav })}>
           <a href="#about" onClick={closeNav}>
             {t.nav.about}
           </a>
@@ -75,7 +71,7 @@ export default function Header(): React.ReactElement {
               })}
               onClick={() => setLanguage("ru")}
             >
-              RU
+              {t.language.ru}
             </button>
             <button
               className={clsx(styles.langOpt, {
@@ -83,13 +79,12 @@ export default function Header(): React.ReactElement {
               })}
               onClick={() => setLanguage("en")}
             >
-              EN
+              {t.language.en}
             </button>
           </div>
           <button
             onClick={toggleTheme}
             className={styles.themeToggle}
-            id="themeToggle"
             aria-label={t.aria.themeToggle}
           >
             <ThemeIcon className={styles.icon} />
@@ -99,7 +94,6 @@ export default function Header(): React.ReactElement {
             className={clsx(styles.menuToggle, {
               [styles.isOpen]: isOpenNav,
             })}
-            id="menuToggle"
             aria-label={t.aria.menuToggle}
           >
             <span />
