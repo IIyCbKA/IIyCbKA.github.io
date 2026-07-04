@@ -1,6 +1,6 @@
 import React from "react";
 
-export interface RevealProps {
+export default interface RevealProps {
   children: React.ReactNode;
   className?: string;
   as?: React.ElementType;

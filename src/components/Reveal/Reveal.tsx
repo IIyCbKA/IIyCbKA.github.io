@@ -1,5 +1,5 @@
 import React from "react";
-import { RevealProps } from "./interface";
+import RevealProps from "./interface";
 import styles from "./style.module.scss";
 import { clsx } from "clsx";
 
