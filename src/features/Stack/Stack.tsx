@@ -1,7 +1,8 @@
 import React from "react";
 import styles from "./styles.module.scss";
 import { getStackI18n } from "./i18n";
-import { CODE_FILENAME, SIGNATURE, STACK } from "./constants";
+import { CODE_FILENAME, SIGNATURE } from "./constants";
+import { STACK } from "./data";
 import shared from "@/shared/common.module.scss";
 import { usePreferencesStore } from "@/stores";
 import { Reveal } from "@/components";
@@ -33,38 +34,17 @@ export default function Stack(): React.ReactElement {
         <h2 className={shared.sectionHeadline}>{t.headline}</h2>
       </div>
       <div className={styles.stackGrid}>
-        <div className={styles.stackCol}>
-          <h3>{t.frontend}</h3>
-          <ul className={styles.stackList}>
-            {STACK.frontend.map((item) => (
-              <li key={item}>{item}</li>
-            ))}
-          </ul>
-        </div>
-        <div className={styles.stackCol}>
-          <h3>{t.backend}</h3>
-          <ul className={styles.stackList}>
-            {STACK.backend.map((item) => (
-              <li key={item}>{item}</li>
-            ))}
-          </ul>
-        </div>
-        <div className={styles.stackCol}>
-          <h3>{t.databases}</h3>
-          <ul className={styles.stackList}>
-            {STACK.databases.map((item) => (
-              <li key={item}>{item}</li>
-            ))}
-          </ul>
-        </div>
-        <div className={styles.stackCol}>
-          <h3>{t.devops}</h3>
-          <ul className={styles.stackList}>
-            {STACK.devops.map((item) => (
-              <li key={item}>{item}</li>
-            ))}
-          </ul>
-        </div>
+        {STACK.map((section) => (
+          <div key={section.id} className={styles.stackCol}>
+            <h3>{t.sections[section.id]}</h3>
+
+            <ul className={styles.stackList}>
+              {section.items.map((item) => (
+                <li key={item}>{item}</li>
+              ))}
+            </ul>
+          </div>
+        ))}
       </div>
       <div className={styles.codeBlock}>
         <div className={styles.codeHead}>
