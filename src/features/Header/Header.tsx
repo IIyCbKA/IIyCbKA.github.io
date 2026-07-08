@@ -2,8 +2,7 @@ import React from "react";
 import styles from "./styles.module.scss";
 import { getHeaderI18n } from "./i18n";
 import { HEADER_SCROLL_THRESHOLD, LOGO_MARK, LOGO_TITLE } from "./constants";
-import Moon from "@/assets/Moon-24x24.svg?react";
-import Sun from "@/assets/Sun-24x24.svg?react";
+import { Moon, Sun } from "@/assets/icons";
 import { usePreferencesStore, useUiStore } from "@/stores";
 import { clsx } from "clsx";
 

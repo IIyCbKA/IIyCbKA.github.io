@@ -9,7 +9,7 @@ import {
   TILE_WIDTH,
   TILE_HEIGHT,
 } from "./constants";
-import HeroImg from "@/assets/Hero-1024x1024.png";
+import { HeroImg } from "@/assets/images";
 import { clsx } from "clsx";
 
 function getTileDelay(row: number, col: number): string {

@@ -2,7 +2,7 @@ import React from "react";
 import styles from "./styles.module.scss";
 import { getHeroI18n } from "./i18n";
 import HeroGrid from "./HeroGrid";
-import FrameMarks from "@/assets/FrameMarks-100x100.svg?react";
+import { FrameMarks } from "@/assets/decorations";
 import { usePreferencesStore } from "@/stores";
 import { useTypewriter } from "@/hooks/Typewriter";
 
