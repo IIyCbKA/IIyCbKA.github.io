@@ -20,15 +20,15 @@ export default function Works(): React.ReactElement {
       </div>
       <div className={styles.worksGrid}>
         {WORKS.map((work, index) => {
-          const item = t.items[work.id];
+          const { alt, title, description } = t.items[work.id];
 
           return (
             <WorkCard
               key={work.id}
               src={work.image}
-              alt={item.alt}
-              title={item.title}
-              description={item.description}
+              alt={alt}
+              title={title}
+              description={description}
               tags={work.tags}
               number={index + 1}
             />

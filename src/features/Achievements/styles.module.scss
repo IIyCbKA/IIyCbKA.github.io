@@ -1,0 +1,85 @@
+@use "@/shared/breakpoints" as bp;
+
+.achGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+
+  @media (max-width: bp.$sm) {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+}
+
+.achColTitle {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.achList {
+  display: flex;
+  flex-direction: column;
+}
+
+.achItem {
+  --hover-shift: 0.5rem;
+
+  display: grid;
+  grid-template-columns: 60px 1fr;
+  gap: 1.5rem;
+  padding-block: 1.5rem;
+  padding-inline-start: 0;
+  padding-inline-end: var(--hover-shift);
+  border-bottom: 1px solid var(--border);
+  transition:
+    padding-inline-start 400ms var(--ease-quiet),
+    padding-inline-end 400ms var(--ease-quiet),
+    border-color 300ms var(--ease-quiet);
+
+  @media (max-width: bp.$sm) {
+    grid-template-columns: 50px 1fr;
+    gap: 1rem;
+  }
+
+  &:hover {
+    padding-inline-start: var(--hover-shift);
+    padding-inline-end: 0;
+    border-color: var(--border-strong);
+  }
+
+  @media (hover: none) {
+    &:hover {
+      padding-inline-start: 0;
+      padding-inline-end: var(--hover-shift);
+    }
+  }
+}
+
+.achYear {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.85rem;
+  color: var(--text-faint);
+  letter-spacing: 0.05em;
+}
+
+.achBody {
+  h4 {
+    font-family: 'Manrope', sans-serif;
+    font-weight: 700;
+    font-size: 1.05rem;
+    line-height: 1.3;
+    margin-bottom: 0.4rem;
+  }
+
+  p {
+    font-size: 0.88rem;
+    color: var(--text-dim);
+    line-height: 1.55;
+  }
+}

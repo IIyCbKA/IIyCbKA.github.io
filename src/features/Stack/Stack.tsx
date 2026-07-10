@@ -37,7 +37,6 @@ export default function Stack(): React.ReactElement {
         {STACK.map((section) => (
           <div key={section.id} className={styles.stackCol}>
             <h3>{t.sections[section.id]}</h3>
-
             <ul className={styles.stackList}>
               {section.items.map((item) => (
                 <li key={item}>{item}</li>
