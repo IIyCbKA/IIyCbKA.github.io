@@ -10,6 +10,7 @@ import {
   Stack,
   Works,
   Achievements,
+  Experience,
   Footer,
 } from "@/features";
 
@@ -37,6 +38,7 @@ export default function App(): React.ReactElement {
         <Stack />
         <Works />
         <Achievements />
+        <Experience />
       </main>
       <Footer />
     </>
