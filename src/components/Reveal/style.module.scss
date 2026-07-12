@@ -1,7 +1,9 @@
 .reveal {
   opacity: 0;
   transform: translateY(40px);
-  transition: opacity 800ms var(--ease-quiet), transform 800ms var(--ease-quiet);
+  transition:
+    opacity 800ms var(--ease-quiet),
+    transform 800ms var(--ease-quiet);
 
   &.isRevealed {
     opacity: 1;

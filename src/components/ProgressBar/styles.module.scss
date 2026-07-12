@@ -6,12 +6,12 @@
   height: 2px;
   background: transparent;
   z-index: 200;
-  pointer-events: none
+  pointer-events: none;
 }
 
 .progressFill {
   height: 100%;
   width: 0;
   background: var(--off-white);
-  transition: width 80ms linear
+  transition: width 80ms linear;
 }

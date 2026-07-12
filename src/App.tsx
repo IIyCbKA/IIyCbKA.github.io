@@ -11,6 +11,7 @@ import {
   Works,
   Achievements,
   Experience,
+  Contact,
   Footer,
 } from "@/features";
 
@@ -39,6 +40,7 @@ export default function App(): React.ReactElement {
         <Works />
         <Achievements />
         <Experience />
+        <Contact />
       </main>
       <Footer />
     </>

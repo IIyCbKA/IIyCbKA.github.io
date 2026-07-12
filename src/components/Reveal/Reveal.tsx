@@ -10,7 +10,7 @@ const Reveal = React.forwardRef<HTMLElement, RevealProps>(
       className = "",
       as: Component = "div",
       threshold = 0.12,
-      rootMargin = "0px 0px -60px 0px",
+      rootMargin = "0px 0px -50px 0px",
       disabled = false,
       id,
       ...rest

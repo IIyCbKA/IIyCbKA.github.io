@@ -1,0 +1,85 @@
+@use "@/shared/breakpoints" as bp;
+
+.contactLinks {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+  width: 100%;
+  max-width: 52rem;
+  margin-inline: auto;
+  text-align: left;
+
+  @media (max-width: bp.$sm) {
+    grid-template-columns: 1fr;
+    max-width: 32rem;
+  }
+}
+
+.contactLink {
+  display: grid;
+  grid-template-columns: minmax(5.5rem, auto) minmax(0, 1fr) auto;
+  grid-template-areas: "label value arrow";
+  gap: 1.5rem;
+  align-items: center;
+  min-width: 0;
+  padding: 1.25rem 1.5rem;
+  border: 1px solid var(--border);
+  background: var(--forest-mid);
+  transition:
+    border-color 400ms var(--ease-quiet),
+    transform 400ms var(--ease-quiet);
+
+  @media (hover: hover) and (pointer: fine) {
+    &:hover {
+      border-color: var(--off-white);
+      transform: translateY(-4px);
+
+      .clArrow {
+        color: var(--off-white);
+        transform: translate(4px, -4px);
+      }
+    }
+  }
+
+  @media (max-width: bp.$xs) {
+    grid-template-columns: minmax(0, 1fr) auto;
+    grid-template-areas:
+      "label arrow"
+      "value arrow";
+    column-gap: 1rem;
+    row-gap: 0.35rem;
+    padding: 1rem 1.25rem;
+  }
+}
+
+.clLabel {
+  grid-area: label;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.68rem;
+  letter-spacing: 0.18em;
+  color: var(--text-dim);
+  text-transform: uppercase;
+
+  @media (max-width: bp.$xs) {
+    font-size: 0.62rem;
+  }
+}
+
+.clValue {
+  grid-area: value;
+  min-width: 0;
+  overflow-wrap: anywhere;
+  font-family: 'Manrope', sans-serif;
+  font-weight: 500;
+  font-size: 1.02rem;
+}
+
+.clArrow {
+  grid-area: arrow;
+  align-self: center;
+  font-size: 1.2rem;
+  color: var(--text-dim);
+  transition:
+    transform 300ms var(--ease-quiet),
+    color 300ms var(--ease-quiet);
+}

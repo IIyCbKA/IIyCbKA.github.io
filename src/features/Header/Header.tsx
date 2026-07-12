@@ -36,7 +36,7 @@ export default function Header(): React.ReactElement {
       <div className={styles.headerInner}>
         <a href="#hero" className={styles.logo}>
           <span className={styles.logoMark}>{LOGO_MARK}</span>
-          <span className={styles.logoText}>{LOGO_TITLE}</span>
+          <span>{LOGO_TITLE}</span>
         </a>
         <nav className={clsx(styles.nav, { [styles.isOpen]: isOpenNav })}>
           <a href="#about" onClick={closeNav}>

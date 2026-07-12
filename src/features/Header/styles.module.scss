@@ -2,28 +2,40 @@
 
 .siteHeader {
   position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
+  inset: 0 0 auto;
   z-index: 100;
+  isolation: isolate;
   padding: 1.25rem 2rem;
   background: transparent;
-  transition:
-    background 400ms var(--ease-quiet),
-    padding 400ms var(--ease-quiet),
-    border-color 400ms var(--ease-quiet);
-  border-bottom: 1px solid transparent;
+  transition: padding 400ms var(--ease-quiet);
+
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    background: transparent;
+    border-bottom: 1px solid transparent;
+
+    transition:
+      background 400ms var(--ease-quiet),
+      border-color 400ms var(--ease-quiet);
+  }
 
   @media (max-width: bp.$md) {
     padding: 1rem 1.25rem;
   }
 
   &.isScrolled {
-    background: var(--header-bg);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
     padding: 0.85rem 2rem;
-    border-bottom-color: var(--border);
+
+    &::before {
+      background: var(--header-bg);
+      border-bottom-color: var(--border);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+    }
 
     @media (max-width: bp.$md) {
       padding: 0.75rem 1.25rem;
@@ -32,6 +44,8 @@
 }
 
 .headerInner {
+  position: relative;
+  z-index: 1;
   max-width: var(--max-w);
   margin: 0 auto;
   display: flex;
@@ -41,6 +55,8 @@
 }
 
 .logo {
+  position: relative;
+  z-index: 2;
   display: flex;
   align-items: center;
   gap: 0.6rem;
@@ -62,8 +78,6 @@
   font-size: 14px;
 }
 
-.logoText {}
-
 .nav {
   display: flex;
   gap: 2rem;
@@ -73,10 +87,10 @@
   letter-spacing: 0.12em;
 
   a {
-    color: var(--text-dim);
-    transition: color 300ms var(--ease-quiet);
     position: relative;
     padding: 0.25rem 0;
+    color: var(--text-dim);
+    transition: color 300ms var(--ease-quiet);
 
     &::after {
       content: '';
@@ -100,20 +114,18 @@
 
   @media (max-width: bp.$md) {
     position: fixed;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    width: 100%;
+    inset: 0;
     background: var(--forest-mid);
     flex-direction: column;
     padding: 6rem 2rem 2rem;
     transform: translateX(100%);
     transition: transform 400ms var(--ease-quiet);
     border-left: 1px solid var(--border);
-    z-index: 90;
+    overflow-y: auto;
+    overscroll-behavior: contain;
 
     &.isOpen {
-      transform:translateX(0);
+      transform: translateX(0);
     }
 
     a {
@@ -124,6 +136,8 @@
 }
 
 .headerActions {
+  position: relative;
+  z-index: 2;
   display: flex;
   gap: 0.6rem;
   align-items: center;
@@ -215,6 +229,5 @@
 
   @media (max-width: bp.$md) {
     display: block;
-    z-index: 95;
   }
 }
