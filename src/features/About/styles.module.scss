@@ -9,12 +9,12 @@
   p {
     margin-bottom: 1.5rem;
     font-size: 1.05rem;
-    color: var(--off-white);
+    color: var(--color-text);
     max-width: 46rem;
     line-height: 1.65;
 
     &:nth-child(n + 2) {
-      color: var(--text-dim);
+      color: var(--color-text-dim);
     }
   }
 }
@@ -25,7 +25,7 @@
   grid-template-columns: repeat(3, 1fr);
   gap: 2rem;
   padding-top: 2rem;
-  border-top: 1px solid var(--border);
+  border-top: 1px solid var(--color-border);
 
   @media (max-width: bp.$sm) {
     grid-template-columns: 1fr;
@@ -40,15 +40,15 @@
 }
 
 .metaK {
-  font-family: 'IBM Plex Mono', monospace;
+  font-family: var(--font-mono);
   font-size: 0.68rem;
   letter-spacing: 0.18em;
-  color: var(--text-faint);
+  color: var(--color-text-faint);
   text-transform: uppercase;
 }
 
 .metaV {
-  font-family: 'Manrope', sans-serif;
+  font-family: var(--font-heading);
   font-size: 1rem;
   font-weight: 500;
 }

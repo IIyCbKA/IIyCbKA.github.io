@@ -34,7 +34,7 @@ export default function Header(): React.ReactElement {
       })}
     >
       <div className={styles.headerInner}>
-        <a href="#hero" className={styles.logo}>
+        <a href="#hero" className={styles.logo} onClick={closeNav}>
           <span className={styles.logoMark}>{LOGO_MARK}</span>
           <span>{LOGO_TITLE}</span>
         </a>

@@ -39,7 +39,7 @@ export const achievementsI18n: Record<Language, any> = {
         title:
           "Сравнительный анализ режимов проксирования трафика через SOCKS5 при управляемом замещении наблюдаемого IP-адреса клиента",
         description:
-          "Исследование архитектур SOCKS5, SSH-туннелирования и TLS-инкапсуляции с точки зрения безопасности и приватности. Опубликовано в сборнике Международной научно-технической конференции молодых ученых БГТУ им. В. Г. Шухова.",
+          "Исследование трех схем подключения на базе SOCKS5 по критериям производительности, защищенности и эксплуатационной надежности. Опубликовано в сборнике Международной научно-технической конференции молодых ученых БГТУ им. В. Г. Шухова.",
       },
       economy: {
         title:
@@ -93,7 +93,7 @@ export const achievementsI18n: Record<Language, any> = {
         title:
           "Comparative analysis of SOCKS5 traffic proxying modes with controlled client IP address substitution",
         description:
-          "A study on SOCKS5, SSH tunneling, and TLS encapsulation architectures focused on security and privacy. Published in the Proceedings of the BSTU Young Scientists Conference.",
+          "A study on three SOCKS5-based connection schemes evaluated by performance, security, and operational reliability. Published in the Proceedings of the BSTU Young Scientists Conference.",
       },
       economy: {
         title:

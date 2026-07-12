@@ -15,7 +15,7 @@ export default function Hero(): React.ReactElement {
   return (
     <section className={styles.hero} id="hero">
       <div className={styles.heroInner}>
-        <div className={styles.heroText}>
+        <div>
           <div className={styles.heroLabel}>{t.label}</div>
           <h1 className={styles.heroTitle}>
             <span>{typedText}</span>

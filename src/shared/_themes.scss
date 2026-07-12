@@ -1,0 +1,61 @@
+@mixin darkTheme {
+  color-scheme: dark;
+
+  --color-background: #0d1310;
+  --color-surface: #1a2420;
+  --color-surface-strong: #2a3a34;
+
+  --color-text: #f4f4f4;
+  --color-text-strong: #ffffff;
+  --color-text-inverse: #1a1a1a;
+
+  --color-text-dim: rgba(244, 244, 244, 0.55);
+  --color-text-faint: rgba(244, 244, 244, 0.35);
+
+  --color-border: rgba(244, 244, 244, 0.1);
+  --color-border-strong: rgba(244, 244, 244, 0.28);
+
+  --color-header-background: rgba(13, 19, 16, 0.85);
+}
+
+@mixin lightTheme {
+  color-scheme: light;
+
+  --color-background: #ebe9e2;
+  --color-surface: #f7f5ee;
+  --color-surface-strong: #d8d4c8;
+
+  --color-text: #1a2420;
+  --color-text-strong: #0d1310;
+  --color-text-inverse: #f4f4f4;
+
+  --color-text-dim: rgba(13, 19, 16, 0.62);
+  --color-text-faint: rgba(13, 19, 16, 0.4);
+
+  --color-border: rgba(13, 19, 16, 0.12);
+  --color-border-strong: rgba(13, 19, 16, 0.32);
+
+  --color-header-background: rgba(235, 233, 226, 0.9);
+}
+
+:root {
+  @include darkTheme;
+}
+
+[data-theme='dark'] {
+  @include darkTheme;
+}
+
+[data-theme='light'] {
+  @include lightTheme;
+}
+
+[data-theme='system'] {
+  @include darkTheme;
+}
+
+@media (prefers-color-scheme: light) {
+  [data-theme='system'] {
+    @include lightTheme;
+  }
+}

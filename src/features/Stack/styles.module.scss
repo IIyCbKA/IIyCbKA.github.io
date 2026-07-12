@@ -22,14 +22,14 @@
 
 .stackCol {
   h3 {
-    font-family: 'IBM Plex Mono', monospace;
+    font-family: var(--font-mono);
     font-size: 0.72rem;
     letter-spacing: 0.18em;
     text-transform: uppercase;
-    color: var(--text-dim);
+    color: var(--color-text-dim);
     margin-bottom: 1.5rem;
     padding-bottom: 1rem;
-    border-bottom: 1px solid var(--border);
+    border-bottom: 1px solid var(--color-border);
   }
 }
 
@@ -40,15 +40,15 @@
     padding-block: 0.6rem;
     padding-inline-start: 0;
     padding-inline-end: var(--hover-shift);
-    border-bottom: 1px dashed var(--border);
-    font-family: 'Manrope', sans-serif;
+    border-bottom: 1px dashed var(--color-border);
+    font-family: var(--font-heading);
     font-weight: 500;
     font-size: 1rem;
     transition: color 300ms var(--ease-quiet), padding 300ms var(--ease-quiet);
     cursor: default;
 
     &:hover {
-      color: var(--text-faint);
+      color: var(--color-text-faint);
       padding-inline-start: var(--hover-shift);
       padding-inline-end: 0;
     }
@@ -56,13 +56,13 @@
 }
 
 .codeBlock {
-  background: var(--forest-mid);
-  border: 1px solid var(--border);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
   overflow: hidden;
 
   pre {
     padding: 1.5rem;
-    font-family: 'IBM Plex Mono', monospace;
+    font-family: var(--font-mono);
     font-size: 0.84rem;
     line-height: 1.75;
     overflow-x: auto;
@@ -74,7 +74,7 @@
   }
 
   code {
-    color: var(--off-white);
+    color: var(--color-text);
   }
 }
 
@@ -83,35 +83,35 @@
   justify-content: space-between;
   align-items: center;
   padding: 0.75rem 1rem;
-  border-bottom: 1px solid var(--border);
-  background: var(--forest-dark);
+  border-bottom: 1px solid var(--color-border);
+  background: var(--color-background);
 }
 
 .codeLang {
-  font-family: 'IBM Plex Mono', monospace;
+  font-family: var(--font-mono);
   font-size: 0.68rem;
   letter-spacing: 0.12em;
-  color: var(--text-dim);
+  color: var(--color-text-dim);
   text-transform: uppercase;
 }
 
 .copyBtn {
   display: inline-grid;
   place-items: center;
-  font-family: 'IBM Plex Mono', monospace;
+  font-family: var(--font-mono);
   font-size: 0.68rem;
   letter-spacing: 0.12em;
   padding: 0.4rem 0.85rem;
-  border: 1px solid var(--border);
+  border: 1px solid var(--color-border);
   transition:
     background 300ms var(--ease-quiet),
     color 300ms var(--ease-quiet),
     border-color 300ms var(--ease-quiet);
-  color: var(--text-dim);
+  color: var(--color-text-dim);
 
   &:hover {
-    border-color: var(--border-strong);
-    color: var(--off-white);
+    border-color: var(--color-border-strong);
+    color: var(--color-text);
   }
 
   span {
@@ -135,9 +135,9 @@
   }
 
   &.flashed {
-    background: var(--off-white);
-    color: var(--forest-dark);
-    border-color: var(--off-white);
+    background: var(--color-text);
+    color: var(--color-background);
+    border-color: var(--color-text);
 
     .copyLabel {
       opacity: 0;

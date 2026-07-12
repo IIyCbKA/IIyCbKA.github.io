@@ -1,9 +1,9 @@
 @use "@/shared/breakpoints" as bp;
 
 .siteFooter {
-  border-top: 1px solid var(--border);
+  border-top: 1px solid var(--color-border);
   padding: 2rem;
-  background: var(--forest-dark);
+  background: var(--color-background);
 }
 
 .footerInner {
@@ -14,10 +14,10 @@
   align-items: center;
   flex-wrap: wrap;
   gap: 1rem;
-  font-family: 'IBM Plex Mono', monospace;
+  font-family: var(--font-mono);
   font-size: 0.68rem;
   letter-spacing: 0.12em;
-  color: var(--text-dim);
+  color: var(--color-text-dim);
   text-transform: uppercase;
 
   @media (max-width: bp.$sm) {

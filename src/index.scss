@@ -1,28 +1,20 @@
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-
-  @media (prefers-reduced-motion: reduce) {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-    scroll-behavior: auto !important;
-  }
-}
+@use "@/shared/resets";
+@use "@/shared/themes";
+@use "@/shared/tokens";
 
 html {
   scroll-behavior: smooth;
-  -webkit-text-size-adjust: 100%
+  -webkit-text-size-adjust: 100%;
+
+  @media (prefers-reduced-motion: reduce) {
+    scroll-behavior: auto;
+  }
 }
 
 body {
-  margin: 0;
-  font-family: 'Inter', system-ui, sans-serif;
-  background: var(--forest-dark);
-  color: var(--off-white);
+  background: var(--color-background);
+  color: var(--color-text);
+  font-family: var(--font-body);
   line-height: 1.6;
   font-size: 16px;
   overflow-x: hidden;
@@ -36,71 +28,5 @@ body {
       border-color 600ms var(--ease-quiet),
       color 600ms var(--ease-quiet),
       fill 600ms var(--ease-quiet) !important;
-  }
-}
-
-img {
-  max-width: 100%;
-  display: block;
-}
-
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
-button {
-  font: inherit;
-  background: none;
-  border: none;
-  color: inherit;
-  cursor: pointer;
-}
-
-ul {
-  list-style: none;
-}
-
-:root {
-  --forest-dark: #0d1310;
-  --forest-mid: #1a2420;
-  --forest-light: #2a3a34;
-  --off-white: #f4f4f4;
-  --pure-white: #ffffff;
-  --soft-black: #1a1a1a;
-  --text-dim: rgba(244, 244, 244, 0.55);
-  --text-faint: rgba(244, 244, 244, 0.35);
-  --border: rgba(244, 244, 244, 0.1);
-  --border-strong: rgba(244, 244, 244, 0.28);
-  --header-bg: rgba(13, 19, 16, 0.85);
-
-  --ease-quiet: cubic-bezier(.22, 1, .36, 1);
-  --ease-precise: cubic-bezier(.4, 0, .2, 1);
-  --ease-emphasis: cubic-bezier(.16, 1, .3, 1);
-  --max-w: 1400px;
-}
-
-@mixin lightThemeProperties {
-  --forest-dark: #ebe9e2;
-  --forest-mid: #f7f5ee;
-  --forest-light: #d8d4c8;
-  --off-white: #1a2420;
-  --pure-white: #0d1310;
-  --soft-black: #f4f4f4;
-  --text-dim: rgba(13, 19, 16, 0.62);
-  --text-faint: rgba(13, 19, 16, 0.4);
-  --border: rgba(13, 19, 16, 0.12);
-  --border-strong: rgba(13, 19, 16, 0.32);
-  --header-bg: rgba(235, 233, 226, 0.9);
-}
-
-[data-theme="light"] {
-  @include lightThemeProperties;
-}
-
-
-@media (prefers-color-scheme: light) {
-  [data-theme="system"] {
-    @include lightThemeProperties;
   }
 }
