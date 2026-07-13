@@ -14,6 +14,11 @@ export const achievementsI18n: Record<Language, any> = {
       competitions: "IT-достижения",
     } satisfies Record<AchievementSectionId, string>,
     items: {
+      gcd4f: {
+        title: "GCD4F",
+        description:
+          "Финалист регионального этапа международного конкурса «Проектируем будущее» с проектом GrowthQuest.",
+      },
       rucode: {
         title: "RuCode",
         description:
@@ -68,6 +73,11 @@ export const achievementsI18n: Record<Language, any> = {
       competitions: "IT Achievements",
     } satisfies Record<AchievementSectionId, string>,
     items: {
+      gcd4f: {
+        title: "GCD4F",
+        description:
+          "Regional finalist in the Global Competition on Design for Future with the GrowthQuest project.",
+      },
       rucode: {
         title: "RuCode",
         description:

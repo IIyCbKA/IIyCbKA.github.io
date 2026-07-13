@@ -8,7 +8,8 @@ export type AchievementId =
   | "dbms"
   | "aros"
   | "hackathon"
-  | "rucode";
+  | "rucode"
+  | "gcd4f";
 
 export type AchievementSection = {
   id: AchievementSectionId;
