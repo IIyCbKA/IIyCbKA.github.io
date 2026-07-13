@@ -1,45 +1,120 @@
+@use "./colors" as colors;
+
+@property --color-background {
+  syntax: '<color>';
+  inherits: true;
+  initial-value: colors.$dark-background;
+}
+
+@property --color-surface {
+  syntax: '<color>';
+  inherits: true;
+  initial-value: colors.$dark-surface;
+}
+
+@property --color-surface-strong {
+  syntax: '<color>';
+  inherits: true;
+  initial-value: colors.$dark-surface-strong;
+}
+
+@property --color-text {
+  syntax: '<color>';
+  inherits: true;
+  initial-value: colors.$dark-text;
+}
+
+@property --color-text-strong {
+  syntax: '<color>';
+  inherits: true;
+  initial-value: colors.$dark-text-strong;
+}
+
+@property --color-text-dim {
+  syntax: '<color>';
+  inherits: true;
+  initial-value: colors.$dark-text-dim;
+}
+
+@property --color-text-faint {
+  syntax: '<color>';
+  inherits: true;
+  initial-value: colors.$dark-text-faint;
+}
+
+@property --color-border {
+  syntax: '<color>';
+  inherits: true;
+  initial-value: colors.$dark-border;
+}
+
+@property --color-border-strong {
+  syntax: '<color>';
+  inherits: true;
+  initial-value: colors.$dark-border-strong;
+}
+
+@property --color-header-background {
+  syntax: '<color>';
+  inherits: true;
+  initial-value: colors.$dark-header-background;
+}
+
 @mixin darkTheme {
   color-scheme: dark;
 
-  --color-background: #0d1310;
-  --color-surface: #1a2420;
-  --color-surface-strong: #2a3a34;
+  --color-background: #{colors.$dark-background};
+  --color-surface: #{colors.$dark-surface};
+  --color-surface-strong: #{colors.$dark-surface-strong};
 
-  --color-text: #f4f4f4;
-  --color-text-strong: #ffffff;
-  --color-text-inverse: #1a1a1a;
+  --color-text: #{colors.$dark-text};
+  --color-text-strong: #{colors.$dark-text-strong};
 
-  --color-text-dim: rgba(244, 244, 244, 0.55);
-  --color-text-faint: rgba(244, 244, 244, 0.35);
+  --color-text-dim: #{colors.$dark-text-dim};
+  --color-text-faint: #{colors.$dark-text-faint};
 
-  --color-border: rgba(244, 244, 244, 0.1);
-  --color-border-strong: rgba(244, 244, 244, 0.28);
+  --color-border: #{colors.$dark-border};
+  --color-border-strong: #{colors.$dark-border-strong};
 
-  --color-header-background: rgba(13, 19, 16, 0.85);
+  --color-header-background: #{colors.$dark-header-background};
 }
 
 @mixin lightTheme {
   color-scheme: light;
 
-  --color-background: #ebe9e2;
-  --color-surface: #f7f5ee;
-  --color-surface-strong: #d8d4c8;
+  --color-background: #{colors.$light-background};
+  --color-surface: #{colors.$light-surface};
+  --color-surface-strong: #{colors.$light-surface-strong};
 
-  --color-text: #1a2420;
-  --color-text-strong: #0d1310;
-  --color-text-inverse: #f4f4f4;
+  --color-text: #{colors.$light-text};
+  --color-text-strong: #{colors.$light-text-strong};
 
-  --color-text-dim: rgba(13, 19, 16, 0.62);
-  --color-text-faint: rgba(13, 19, 16, 0.4);
+  --color-text-dim: #{colors.$light-text-dim};
+  --color-text-faint: #{colors.$light-text-faint};
 
-  --color-border: rgba(13, 19, 16, 0.12);
-  --color-border-strong: rgba(13, 19, 16, 0.32);
+  --color-border: #{colors.$light-border};
+  --color-border-strong: #{colors.$light-border-strong};
 
-  --color-header-background: rgba(235, 233, 226, 0.9);
+  --color-header-background: #{colors.$light-header-background};
 }
 
 :root {
   @include darkTheme;
+
+  transition-property:
+    --color-background,
+    --color-surface,
+    --color-surface-strong,
+    --color-text,
+    --color-text-strong,
+    --color-text-dim,
+    --color-text-faint,
+    --color-border,
+    --color-border-strong,
+    --color-header-background;
+
+  transition-duration: var(--duration-theme, 0.4s);
+  transition-timing-function: var(--ease-quiet, ease);
 }
 
 [data-theme='dark'] {
