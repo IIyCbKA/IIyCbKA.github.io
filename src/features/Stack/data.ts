@@ -1,7 +1,7 @@
 import { type StackSection } from "./types";
 
 export const STACK: StackSection[] = [
-  { id: "frontend", items: ["React", "Node.js", "Vite", "SCSS"] },
+  { id: "frontend", items: ["React", "Redux", "Vite", "SCSS"] },
   {
     id: "backend",
     items: ["Django", "Django REST Framework", "DRF Spectacular", "Celery"],
