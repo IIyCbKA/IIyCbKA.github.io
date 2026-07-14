@@ -34,7 +34,6 @@
       background: var(--color-header-background);
       border-bottom-color: var(--color-border);
       backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
     }
 
     @media (max-width: bp.$md) {
